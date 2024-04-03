@@ -6,5 +6,3 @@ java:S1192"^Define a constant instead of duplicating this literal "-----------
 java:S1118	":Add a private constructor to hide the implicit public one.(Š­àùÿÿÿÿ8Ç¸¯…ê1J$cea63ca4-f46e-4178-b310-c417d38b49cf
 ™
 java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.( ÔÛıÿÿÿÿ8Ê¸¯…ê1J$be5c4c62-a360-400e-887f-63aa7404c584
-”
-java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(ŠõšŸ8Ë¸¯…ê1J$5909c193-b9a1-4207-adde-55c312dfce7c

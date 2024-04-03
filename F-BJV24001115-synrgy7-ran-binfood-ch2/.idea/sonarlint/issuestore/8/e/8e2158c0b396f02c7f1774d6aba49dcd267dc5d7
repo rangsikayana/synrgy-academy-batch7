@@ -2,8 +2,6 @@
 ¤
 java:S1192v"\Define a constant instead of duplicating this literal "==========================
 " 4 times.(›˜öÆÿÿÿÿÿ8‚àúĞè1J$5451878b-4b9c-4e6d-88f2-25156de0fa7f
-
-java:S2095u"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(óİÍÀÿÿÿÿÿ8ªŞ£ê1J$8ca25f1e-cd0d-417f-92ea-d8975405dd9e
 r	java:S106#"+Replace this use of System.out by a logger.(ÒøĞ¿üÿÿÿÿ8ÁÎóÑè1J$70895660-2557-48f3-9cc9-8e2c6c316e08
 m	java:S106'"+Replace this use of System.out by a logger.(»½õ¼8Í¢÷Ñè1J$cb5973cc-1dc5-4f15-a4a9-eba8a7c2c133
 m	java:S1062"+Replace this use of System.out by a logger.(ÜÅÛ¶8Ğ¢÷Ñè1J$7b6a81d4-d170-4a1d-b688-87c0d2393340
@@ -12,11 +10,7 @@ m	java:S106C"+Replace this use of System.out by a logger.(¨¢€™8óª …ê1J$dffcf4
 r	java:S106G"+Replace this use of System.out by a logger.(ÒøĞ¿üÿÿÿÿ8ôª …ê1J$3538ef37-6a50-4546-9a93-c2e65c413b85
 m	java:S106K"+Replace this use of System.out by a logger.(»½õ¼8ôª …ê1J$141b62fa-2d2a-432a-9f4a-67052cbb136b
 ”
-java:S3457~"Q%n should be used in place of \n to produce the platform-specific line separator.(Œ¦¾­8ÓŞ£ê1J$7f987985-b341-4a7d-b65d-c5e87a67ebaa
-”
 java:S3457‚"Q%n should be used in place of \n to produce the platform-specific line separator.(áòš28ÔŞ£ê1J$cf91c9a6-e608-404d-9db8-923a46bf7472
 s	java:S106Š"+Replace this use of System.out by a logger.(úÖ­şÿÿÿÿ8ÕŞ£ê1J$80ff1358-a18d-4b2b-947a-588c5e55689d
-z
-java:S1128"7Remove this unused import 'org.example.view.OrderView'.(ºùº“8şª …ê1J$27a150f1-3ef7-415b-8c15-f3980bf51db3
 m
 java:S1068"+Remove this unused "scanner" private field.(·¸ã8Ü¢÷Ñè1J$96c9e727-e5fc-40f0-932a-fb14ab1c685b

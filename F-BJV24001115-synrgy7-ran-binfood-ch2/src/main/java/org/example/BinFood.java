@@ -8,17 +8,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BinFood {
-    private static Scanner scanner = new Scanner(System.in);
-    private static List<Order> orderList = new ArrayList<>();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final List<Order> orderList = new ArrayList<>();
+    private static final String MENU_SEPARATOR = "==========================";
+    private static final String THANK_YOU_MESSAGE = "Terima kasih telah";
+    private static final String USING_BINFOOD_MESSAGE = "menggunakan BinFood!";
+    private static final String NEW_LINE = System.lineSeparator();
+    private static final String MENU_SEPARATOR_FORMAT = "%s%s%s";
+    private static final String MENU_SEPARATOR_NEWLINE_FORMAT = "%s%s%s\n";
 
     public static void main(String[] args) {
         displayMainMenu();
     }
 
     private static void displayMainMenu() {
-        System.out.println("\n==========================");
+        System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, MENU_SEPARATOR, NEW_LINE);
         System.out.println("Selamat Datang di BinFood");
-        System.out.println("==========================");
+        System.out.printf(MENU_SEPARATOR_NEWLINE_FORMAT, MENU_SEPARATOR, "", "");
         System.out.println("Silahkan pilih makanan:");
         System.out.println("1. Nasi Goreng   | 15.000");
         System.out.println("2. Mie Goreng    | 13.000");
@@ -37,8 +43,8 @@ public class BinFood {
                 checkout();
                 break;
             case 0:
-                System.out.println("\nTerima kasih telah");
-                System.out.println("menggunakan BinFood!");
+                System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, THANK_YOU_MESSAGE, NEW_LINE);
+                System.out.println(USING_BINFOOD_MESSAGE);
                 System.exit(0);
                 break;
             default:
@@ -49,9 +55,9 @@ public class BinFood {
     }
 
     private static void placeOrder(int item) {
-        System.out.println("\n==========================");
+        System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, MENU_SEPARATOR, NEW_LINE);
         System.out.println("Berapa pesanan Anda?");
-        System.out.println("==========================");
+        System.out.printf(MENU_SEPARATOR_NEWLINE_FORMAT, MENU_SEPARATOR, "", "");
         String itemName = getItemName(item);
         int itemPrice = getItemPrice(item);
         System.out.println(itemName + "\t| " + itemPrice);
@@ -67,13 +73,13 @@ public class BinFood {
             int totalPrice = itemPrice * quantity;
             Order order = new Order(itemName, quantity, totalPrice);
             orderList.add(order);
-            System.out.println("\nPesanan berhasil ditambahkan!");
             displayMainMenu();
         } catch (OrderUtilException e) {
-            System.out.println("\n==========================");
+            System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, MENU_SEPARATOR, NEW_LINE);
             System.out.println("Minimal 1 jumlah pesanan!");
-            System.out.println("==========================");
-            System.out.println("Mohon masukkan input pilihan Anda:");
+            System.out.printf(MENU_SEPARATOR_NEWLINE_FORMAT, MENU_SEPARATOR, "", "");
+            System.out.println("Mohon masukkan input");
+            System.out.println("pilihan Anda:");
             System.out.println("(y) untuk lanjut");
             System.out.println("(n) untuk keluar");
             System.out.print("Pilih => ");
@@ -81,8 +87,8 @@ public class BinFood {
             if (choice == 'y') {
                 placeOrder(item);
             } else if (choice == 'n') {
-                System.out.println("\nTerima kasih telah");
-                System.out.println("menggunakan BinFood!");
+                System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, THANK_YOU_MESSAGE, NEW_LINE);
+                System.out.println(USING_BINFOOD_MESSAGE);
                 System.exit(0);
             } else {
                 System.out.println("Pilihan tidak valid!");
@@ -99,18 +105,18 @@ public class BinFood {
 
     private static void checkout() {
         if (!orderList.isEmpty()) {
-            System.out.println("\n==========================");
+            System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, MENU_SEPARATOR, NEW_LINE);
             System.out.println("Konfirmasi & Pembayaran");
-            System.out.println("==========================");
+            System.out.printf(MENU_SEPARATOR_NEWLINE_FORMAT, MENU_SEPARATOR, "", "");
             System.out.println("Pesanan Anda:");
 
             for (Order order : orderList) {
-                System.out.printf("%-16s %d %d\n", order.getItemName(), order.getQuantity(), order.getTotalPrice());
+                System.out.printf("%-16s %d %d%n", order.getItemName(), order.getQuantity(), order.getTotalPrice());
             }
 
             int totalPayment = calculateTotalPayment();
             System.out.println("=========================+");
-            System.out.printf("Total\t\t\t   %d\n", totalPayment);
+            System.out.printf("Total\t\t\t   %d%n", totalPayment);
             System.out.println("1. Konfirmasi dan Bayar");
             System.out.println("2. Kembali ke Menu Utama");
             System.out.println("0. Keluar Aplikasi");
@@ -119,7 +125,7 @@ public class BinFood {
             switch (option) {
                 case 1:
                     saveReceipt(totalPayment);
-                    System.out.println("\nTerima kasih telah");
+                    System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, THANK_YOU_MESSAGE, NEW_LINE);
                     System.out.println("berbelanja di BinFood!");
                     System.exit(0);
                     break;
@@ -127,8 +133,8 @@ public class BinFood {
                     displayMainMenu();
                     break;
                 case 0:
-                    System.out.println("\nTerima kasih telah");
-                    System.out.println("menggunakan BinFood!");
+                    System.out.printf(MENU_SEPARATOR_FORMAT, NEW_LINE, THANK_YOU_MESSAGE, NEW_LINE);
+                    System.out.println(USING_BINFOOD_MESSAGE);
                     System.exit(0);
                     break;
                 default:
@@ -186,24 +192,24 @@ public class BinFood {
 
     private static void saveReceipt(int totalPayment) {
         try (FileWriter writer = new FileWriter("struk_pembayaran.txt")) {
-            writer.write("==========================\n");
-            writer.write("BinFood\n");
-            writer.write("==========================\n");
-            writer.write("Terima kasih sudah memesan\n");
-            writer.write("di BinFood. Di bawah ini\n");
-            writer.write("adalah pesanan Anda:\n");
+            writer.write(String.format(MENU_SEPARATOR_FORMAT, "", MENU_SEPARATOR, ""));
+            writer.write(NEW_LINE + "BinFood" + NEW_LINE);
+            writer.write(String.format(MENU_SEPARATOR_FORMAT, "", MENU_SEPARATOR, ""));
+            writer.write(NEW_LINE + "Terima kasih sudah memesan" + NEW_LINE);
+            writer.write("di BinFood. Di bawah ini" + NEW_LINE);
+            writer.write("adalah pesanan Anda:" + NEW_LINE);
 
             for (Order order : orderList) {
-                writer.write(String.format("%-16s %d %d\n", order.getItemName(), order.getQuantity(), order.getTotalPrice()));
+                writer.write(String.format("%-16s %d %d%n", order.getItemName(), order.getQuantity(), order.getTotalPrice()));
             }
 
-            writer.write("=========================+\n");
-            writer.write(String.format("Total\t\t\t   %d\n", totalPayment));
-            writer.write("Pembayaran: BinarCash\n");
-            writer.write("==========================\n");
-            writer.write("Simpan struk ini sebagai\n");
-            writer.write("bukti pembayaran.\n");
-            writer.write("==========================\n");
+            writer.write("=========================+" + NEW_LINE);
+            writer.write(String.format("Total\t\t\t   %d%n", totalPayment));
+            writer.write("Pembayaran: BinarCash" + NEW_LINE);
+            writer.write(String.format(MENU_SEPARATOR_FORMAT, "", MENU_SEPARATOR, ""));
+            writer.write(NEW_LINE + "Simpan struk ini sebagai" + NEW_LINE);
+            writer.write("bukti pembayaran." + NEW_LINE);
+            writer.write(String.format(MENU_SEPARATOR_FORMAT, "", MENU_SEPARATOR, ""));
         } catch (IOException e) {
             System.out.println("Terjadi kesalahan saat mencoba menyimpan struk pembayaran.");
             e.printStackTrace();
