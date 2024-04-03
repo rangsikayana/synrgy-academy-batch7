@@ -17,7 +17,5 @@ i
 9src/main/java/org/example/controller/OrderController.java,8\e\8e2158c0b396f02c7f1774d6aba49dcd267dc5d7
 D
 struk_pembayaran.txt,6\d\6d37bc78be6a3e01ed2fce31295cb1813d114fe2
-b
-2src/main/java/org/example/util/ValidationUtil.java,e\7\e79d7fc118b772a20740244e9c4ee9f303ef5f03
 f
 6src/main/java/org/example/util/OrderUtilException.java,1\a\1a4b0661f28ae58d0e6bb66139583080b2c45494

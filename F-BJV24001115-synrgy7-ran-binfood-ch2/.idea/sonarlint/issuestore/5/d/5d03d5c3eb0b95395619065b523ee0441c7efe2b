@@ -18,8 +18,6 @@ r	java:S106$"+Replace this use of System.out by a logger.(ΫϊΚμϋÿÿÿÿ8ιπ…κ1J$b
 r	java:S106%"+Replace this use of System.out by a logger.(βµΊηÿÿÿÿÿ8ιπ…κ1J$d4795bac-7cae-4aa2-a2b8-fc3718fb09ef
 r	java:S106&"+Replace this use of System.out by a logger.(Εα—•ώÿÿÿÿ8ιπ…κ1J$f833852d-f086-4ef3-9747-d3f698a4405d
 m	java:S106'"+Replace this use of System.out by a logger.(ΕΕ8κπ…κ1J$ddcbf34d-0d71-4d0e-b639-45adf74bbfb8
-”
-java:S3457*"Q%n should be used in place of \n to produce the platform-specific line separator.(δ…ι8λπ…κ1J$d2282015-825c-4398-b7ba-6204ddb744e5
 m	java:S106*"+Replace this use of System.out by a logger.(δ…ι8λπ…κ1J$73d3a237-6553-4ec7-a81a-59d7845096fa
 r	java:S106-"+Replace this use of System.out by a logger.(Ϋφ†ήϋÿÿÿÿ8λπ…κ1J$682e428c-45b6-4ae8-a07a-0ee140f52f5a
 ™
