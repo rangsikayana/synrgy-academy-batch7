@@ -1,0 +1,18 @@
+==========================
+BinFood
+==========================
+Terima kasih sudah memesan
+di BinFood. Di bawah ini
+adalah pesanan Anda:
+Nasi Goreng      1 15000
+Mie Goreng       2 26000
+Nasi + Ayam      3 54000
+Es Teh Manis     4 12000
+Es Jeruk         5 25000
+=========================+
+Total			   132000
+Pembayaran: BinarCash
+==========================
+Simpan struk ini sebagai
+bukti pembayaran.
+==========================
